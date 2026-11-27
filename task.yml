@@ -12,7 +12,7 @@ inputs:
 # host: the name of the host this task runs on
 # script: the command that runs on the host, with access to the input's context variables
 rec_to_nifti:
-  host: { { HOST_NAME } }
+  host: {{ HOST_NAME }}
   image: mrigroupopbg/mri-python3
   script_type: python
   script: |
