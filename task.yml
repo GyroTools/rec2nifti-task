@@ -1,6 +1,6 @@
 # define the host name
 variables:
-  HOST_NAME: chap02
+  HOST_NAME: <my_host>
 
 # the par/rec file as input
 inputs:
