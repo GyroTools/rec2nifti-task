@@ -1,0 +1,23 @@
+# define the host name
+variables:
+  HOST_NAME: chap02
+
+# the par/rec file as input
+inputs:
+  in1:
+    type: dataset
+    dataset_type: par_rec
+    push_data: true
+
+# host: the name of the host this task runs on
+# script: the command that runs on the host, with access to the input's context variables
+rec_to_nifti:
+  host: { { HOST_NAME } }
+  image: mrigroupopbg/mri-python3
+  script_type: python
+  script: |
+    {{ files.rectonifti.content }}
+  artifacts:
+    result:
+      path: "{{ output_dir }}/*.nii"
+      import: true
